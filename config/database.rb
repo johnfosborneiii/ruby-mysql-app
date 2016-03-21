@@ -32,8 +32,8 @@ def self.connect_to_database_test
   begin
     config = {
       :adapter  => "mysql2",
-      :host     => "#{ENV["DATABASE_TEST_SERVICE_HOST"]}",
-      :port     => "#{ENV["DATABASE_TEST_SERVICE_PORT"]}",
+      :host     => "#{ENV["MYSQL_TEST_SERVICE_HOST"]}",
+      :port     => "#{ENV["MYSQL_TEST_SERVICE_PORT"]}",
       :database => "#{ENV["MYSQL_DATABASE"]}"
     }
     if ENV.key?("MYSQL_ROOT_PASSWORD")
