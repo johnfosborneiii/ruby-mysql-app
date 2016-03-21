@@ -1,3 +1,5 @@
+The following are instructions on how to deploy this sample persistent ruby application in OpenShift 3
+
 ## Create the application
 oc new-app https://github.com/tariq-islam/ruby-hello-world --strategy=docker
 - OR -
