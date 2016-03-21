@@ -4,8 +4,8 @@ def self.connect_to_database_prod
   begin
     config = {
       :adapter  => "mysql2",
-      :host     => "#{ENV["DATABASE_SERVICE_HOST"]}",
-      :port     => "#{ENV["DATABASE_SERVICE_PORT"]}",
+      :host     => "#{ENV["MYSQL_SERVICE_HOST"]}",
+      :port     => "#{ENV["MYSQL_SERVICE_PORT"]}",
       :database => "#{ENV["MYSQL_DATABASE"]}"
     }
     if ENV.key?("MYSQL_ROOT_PASSWORD")
