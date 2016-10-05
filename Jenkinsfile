@@ -20,7 +20,7 @@ node {
 // Creates a Build and triggers it
 def buildApp(String project){
     sh "oc login https://192.168.122.124:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
-    sh "oc project ${project} || oc new-project ${project}; oc create -f ruby-mysql-app-bc.yml"
+    sh "oc project ${project}; oc replace -f ruby-mysql-app-bc.yml || oc new-project ${project}; oc create -f ruby-mysql-app-bc.yml"
     sh "oc start-build ruby-mysql-app"
     appDeploy()
 }
