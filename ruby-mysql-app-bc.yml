@@ -17,7 +17,8 @@ spec:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: openshift/ruby:latest
+        namespace: openshift
+        name: ruby:latest
     type: Docker
 status:
 
