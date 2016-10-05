@@ -17,7 +17,7 @@ spec:
     dockerStrategy:
       from:
         kind: ImageStreamTag
-        name: ruby-22-centos7:latest
+        name: ruby:latest
     type: Docker
 status:
 
