@@ -26,7 +26,7 @@ def buildApp(String project){
 
 // Tag the ImageStream from an original project to force a deployment
 def deployApp(String origProject, String project){
-    sh "oc project ${project} || oc new-project ${project}; oc new-app jenkins-ephemeral -p JENKINS_PASSWORD=password"
+    sh "oc project ${project} || oc new-project ${project}"
     sh "oc policy add-role-to-user system:image-puller system:serviceaccount:${project}:default -n ${origProject}"
     sh "oc tag ${origProject}/ruby-mysql-app:latest ${project}/ruby-mysql-app:latest"
     appDeploy()
