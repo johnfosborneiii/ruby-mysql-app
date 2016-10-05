@@ -35,4 +35,5 @@ def deployApp(String origProject, String project){
 def appDeploy(){
     sh "oc new-app ruby-mysql-app || echo 'Application already Exists'"
     sh "oc expose service ruby-mysql-app || echo 'Service already exposed'"
+    sh "oc env dc/mysql --list | grep MYSQL | oc env dc/ruby-mysql-app -e -"
 }
