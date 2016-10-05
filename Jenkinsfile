@@ -1,7 +1,7 @@
 node {
     stage 'Build image and deploy in Dev'
     echo 'Building docker image and deploying to Dev'
-    git url: 'https://github.com/tariq-islam/ruby-mysql-app -b ocp33-pipeline'
+    //git url: 'https://github.com/tariq-islam/ruby-mysql-app -b ocp33-pipeline'
     checkout scm: [$class: 'GitSCM', branches: [[name: '*/ocp33-pipeline']], userRemoteConfigs: [[url: 'https://github.com/tariq-islam/ruby-mysql-app']]]
     buildApp('ruby-mysql-app-dev')
 
