@@ -7,8 +7,6 @@ spec:
     to:
       kind: ImageStreamTag
       name: ruby-mysql-app:latest
-  postCommit: {}
-  resources: {}
   runPolicy: Serial
   source:
     git:
