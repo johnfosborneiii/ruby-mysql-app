@@ -1,5 +1,0 @@
-apiVersion: v1
-kind: ImageStream
-metadata:
-  name: ruby-mysql-app
-spec: {}
