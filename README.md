@@ -46,3 +46,7 @@ git clone https://github.com/<your-git>/ruby-mysql-app
 <br>
 
 Lastly, note that the Jenkinsfile does make sure to inject the appropriate mysql environment variables into the application instance per environment
+
+<br>
+
+Once you're all finished, you can run the _cleanup.sh_ script to remove everything.
