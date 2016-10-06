@@ -15,7 +15,7 @@ node {
 
     stage 'Deploy to production'
     echo 'Deploying to production'
-	deployApp('app-dev', 'app-prod')
+    deployApp('app-dev', 'app-prod')
 }
 
 // Creates a Build and triggers it
