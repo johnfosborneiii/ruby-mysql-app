@@ -1,18 +1,21 @@
 node {
     stage 'Build image and deploy in Dev'
     echo 'Building docker image and deploying to Dev'
-    buildApp('ruby-mysql-app-dev')
+    buildApp('app-dev')
+
+    stage 'Approve for QA'
+    input 'Approve to QA?'
 
     stage 'Deploy to QA'
     echo 'Deploying to QA'
-    deployApp('ruby-mysql-app-dev', 'ruby-mysql-app-qa')
+    deployApp('app-dev', 'app-qa')
  
-    stage 'Wait for approval'
-    input 'Approve to production?'
+    stage 'Approve for Production'
+    input 'Approve to Production?'
 
     stage 'Deploy to production'
     echo 'Deploying to production'
-    deployApp('ruby-mysql-app-dev', 'ruby-mysql-app')
+	deployApp('app-dev', 'app-prod')
 }
 
 // Creates a Build and triggers it
