@@ -22,20 +22,20 @@ node {
 def buildApp(String project){
     sh "oc login https://192.168.122.124:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
     sh "oc project ${project}"
-    sh "oc start-build ruby-mysql-app"
+    sh "oc start-build ruby-mysql"
 }
 
 // Tag the ImageStream from an original project to force a deployment
 def deployApp(String origProject, String project){
     sh "oc project ${project}"
     sh "oc policy add-role-to-user system:image-puller system:serviceaccount:${project}:default -n ${origProject}"
-    sh "oc tag ${origProject}/ruby-mysql-app:latest ${project}/ruby-mysql-app:latest"
+    sh "oc tag ${origProject}/ruby-mysql:latest ${project}/ruby-mysql:latest"
     appDeploy()
 }
 
 // Deploy the project based on an existing ImageStream
 def appDeploy(){
-    sh "oc new-app ruby-mysql-app || echo 'Application already Exists'"
-    sh "oc expose service ruby-mysql-app || echo 'Service already exposed'"
-    sh "oc env dc/mysql --list | grep MYSQL | oc env dc/ruby-mysql-app -e -"
+    sh "oc new-app ruby-mysql || echo 'Application already Exists'"
+    sh "oc expose service ruby-mysql || echo 'Service already exposed'"
+    sh "oc env dc/mysql --list | grep MYSQL | oc env dc/ruby-mysql -e -"
 }
