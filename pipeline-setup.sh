@@ -19,12 +19,12 @@ if [ -z "$username" ]; then
 	username="openshift-dev"
 fi
  
-echo "Enter the url for your repository. If it's a specific branch you'd like to use, please append the branch to the url with '#<branch_name>' [default: https://github.com/tariq-islam/bluegreen#ocp33-pipeline]: "
+echo "Enter the url for your repository. If it's a specific branch you'd like to use, please append the branch to the url with '#<branch_name>' [default: https://github.com/tariq-islam/ruby-mysql-app#ocp33-pipeline]: "
  
 read repository_path
  
 if [ -z "$repository_path" ]; then                                                                  
-    repository_path="https://github.com/tariq-islam/bluegreen#ocp33-pipeline"
+    repository_path="https://github.com/tariq-islam/ruby-mysql-app#ocp33-pipeline"
     echo "Using default repository at : " $repository_path
 fi
 
