@@ -7,8 +7,8 @@ spec:
   source:
     type: Git
     git:
-      uri: <your fork here>
-      ref: <your branch here if applicable>
+      uri: https://github.com/tariq-islam/ruby-mysql-app
+      ref: ocp33-pipeline-ti
   strategy:
     type: JenkinsPipeline
     jenkinsPipelineStrategy:

@@ -36,7 +36,7 @@ oc expose service ruby-mysql
 oc new-app mysql-ephemeral
 oc new-app "$jenkins_image" -p JENKINS_PASSWORD=password
 oc env dc/mysql --list | grep MYSQL | oc env dc/ruby-mysql -e -
-oc create -f <path to your pipeline-bc yaml file here>
+oc create -f https://raw.githubusercontent.com/tariq-islam/ruby-mysql-app/ocp33-pipeline-ti/ruby-mysql-app-pipeline-bc.yml
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-app mysql-ephemeral
 oc new-project app-prod --display-name="Application Production Environment"
