@@ -9,7 +9,7 @@ node {
     stage 'Deploy to QA'
     echo 'Deploying to QA'
     deployApp('app-dev', 'app-qa')
- 
+
     stage 'Approve for Production'
     input 'Approve to Production?'
 
@@ -20,7 +20,7 @@ node {
 
 // Creates a Build and triggers it
 def buildApp(String project){
-    sh "oc login https://192.168.122.124:8443 --insecure-skip-tls-verify -u openshift-dev -p devel"
+    sh "oc login https://<your hostname here>:8443 --insecure-skip-tls-verify -u <username> -p <password>"
     sh "oc project ${project}"
     sh "oc start-build ruby-mysql"
 }
