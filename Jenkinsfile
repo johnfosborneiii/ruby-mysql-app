@@ -20,7 +20,7 @@ node {
 
 // Creates a Build and triggers it
 def buildApp(String project){
-    sh "oc login https://openshift.josborne.com:8443 --insecure-skip-tls-verify -u josborne -p redhat 
+    sh "oc login https://openshift.josborne.com:8443 --insecure-skip-tls-verify -u josborne -p redhat" 
     sh "oc project ${project}"
     sh "oc start-build ruby-mysql"
 }
