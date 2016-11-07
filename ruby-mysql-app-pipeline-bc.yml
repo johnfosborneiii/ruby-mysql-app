@@ -8,7 +8,7 @@ spec:
     type: Git
     git:
       uri: https://github.com/johnfosborneiii/ruby-mysql-app 
-      ref:  
+      ref: ocp33-pipeline 
   strategy:
     type: JenkinsPipeline
     jenkinsPipelineStrategy:
