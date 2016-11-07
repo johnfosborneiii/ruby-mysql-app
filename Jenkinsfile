@@ -7,14 +7,14 @@ node {
     input 'Approve to QA?'
 
     stage 'Deploy to QA'
-    echo 'Deploying to QA'
+    echo 'Deploying to QA!'
     deployApp('app-dev', 'app-qa')
 
     stage 'Approve for Production'
     input 'Approve to Production?'
 
     stage 'Deploy to production'
-    echo 'Deploying to production'
+    echo 'Deploying to production!'
     deployApp('app-dev', 'app-prod')
 }
 
