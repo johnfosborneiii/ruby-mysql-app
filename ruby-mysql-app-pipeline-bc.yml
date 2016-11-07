@@ -7,7 +7,7 @@ spec:
   source:
     type: Git
     git:
-      uri: <your fork here>
+      uri: https://github.com/johnfosborneiii/ruby-mysql-app 
       ref: <your branch here if applicable>
   strategy:
     type: JenkinsPipeline

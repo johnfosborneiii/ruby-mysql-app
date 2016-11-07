@@ -19,12 +19,12 @@ if [ -z "$username" ]; then
 	username="openshift-dev"
 fi
 
-echo "Enter the url for your repository. If it's a specific branch you'd like to use, please append the branch to the url with '#<branch_name>' [default: https://github.com/tariq-islam/ruby-mysql-app#ocp33-pipeline]: "
+echo "Enter the url for your repository. If it's a specific branch you'd like to use, please append the branch to the url with '#<branch_name>' [default: https://github.com/johnfosborneiii/ruby-mysql-app#ocp33-pipeline]: "
 
 read repository_path
 
 if [ -z "$repository_path" ]; then
-    repository_path="https://github.com/tariq-islam/ruby-mysql-app#ocp33-pipeline"
+    repository_path="https://github.com/johnfosborneiii/ruby-mysql-app#ocp33-pipeline"
     echo "Using default repository at : " $repository_path
 fi
 
@@ -36,7 +36,7 @@ oc expose service ruby-mysql
 oc new-app mysql-ephemeral
 oc new-app "$jenkins_image" -p JENKINS_PASSWORD=password
 oc env dc/mysql --list | grep MYSQL | oc env dc/ruby-mysql -e -
-oc create -f <path to your pipeline-bc yaml file here>
+oc create -f ruby-mysql-app-pipeline-bc.yml 
 oc new-project app-qa --display-name="Application QA Environment"
 oc new-app mysql-ephemeral
 oc new-project app-prod --display-name="Application Production Environment"
